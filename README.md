@@ -9,6 +9,6 @@ A password manager API.
 - ### Technologies
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=ts,express,postgres,prisma" />
+    <img src="https://skillicons.dev/icons?i=ts,express,postgres,prisma,nodejs" />
   </a>
 </p>
