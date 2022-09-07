@@ -32,6 +32,15 @@ export async function findByUserId ( userId: number ) {
     })
 }
 
+export async function findByCredentialId ( credentialId: number ) {
+    return await prisma.credentials.findMany({
+        where: {
+            id: credentialId
+        },
+        select: {...selectedFields, userId: true}
+    })
+}
+
 export async function createCredential(credentialData: createCredential) {
     await prisma.credentials.create({
         data: credentialData
