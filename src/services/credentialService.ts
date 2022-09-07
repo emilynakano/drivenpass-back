@@ -11,4 +11,6 @@ export function createCredential (dataCredential: credentialRepository.createCre
         userId
     } = dataCredential
 
+    const passwordHash = encrypt(password);
+    console.log(passwordHash)
 }
