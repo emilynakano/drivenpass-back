@@ -1,13 +1,12 @@
+import * as userRepository from '../repositories/userRepository';
+import * as error from '../middlewares/errorHandlingMiddleware';
+
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 import dotenv from 'dotenv';
 
 dotenv.config();
-
-import * as userRepository from '../repositories/userRepository';
-
-import * as error from '../middlewares/errorHandlingMiddleware'
 
 export async function signUp ( dataUser:userRepository.ICreateUser ) {
     const { password, email } = dataUser;
