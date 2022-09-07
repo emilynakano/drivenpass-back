@@ -1,12 +1,21 @@
 import prisma from '../databases/database'
+import { users } from '@prisma/client';
 
-export interface IUser {
-    name: string;
-    email: string;
-    password: string;
-}
+export type IUser = Omit<users, "id">
 
 export async function insertUser (dataUser: IUser) {
-    const { name, email, password } = dataUser
-    //await prisma.users.create({})
+    
+    await prisma.users.create({
+        data: dataUser
+    });
+
+}
+export async function findUser (email: string) {
+    
+    return await prisma.users.findFirst({
+        where: {
+            email
+        }
+    });
+
 }
