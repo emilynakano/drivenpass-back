@@ -1,9 +1,10 @@
 import prisma from '../databases/database'
 import { users } from '@prisma/client';
 
-export type IUser = Omit<users, "id">
+export type ICreateUser = Omit<users, "id">;
+export type ILoginUser = Omit<users, "id" | "name">;
 
-export async function insertUser (dataUser: IUser) {
+export async function insertUser (dataUser: ICreateUser) {
     
     await prisma.users.create({
         data: dataUser
