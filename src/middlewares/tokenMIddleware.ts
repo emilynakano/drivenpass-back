@@ -1,6 +1,6 @@
 import { NextFunction, Response, Request } from 'express';
 
-import { unauthorized } from './errorHandlingMiddleware';
+import * as error from './errorHandlingMiddleware';
 
 import * as userService from '../services/userService'
 
@@ -13,23 +13,22 @@ export default async function tokenMiddleware ( req: Request, res: Response, nex
     const token = req.headers.authorization?.split(' ')[1];
 
     if(!token) {
-        throw unauthorized('token')
+        throw error.unauthorized('token')
     }
 
-    const secretKey = process.env.JWT_SECRET_KEY??'secretKey';
 
-    let idToken: any;
-
-    jwt.verify(token, secretKey, function(err, decoded){
+    jwt.verify(token, process.env.JWT_SECRET_KEY??'secretKey', async function(err, decoded){
 
         if(err)  {
-            throw unauthorized("token")
+            throw error.unauthorized("token")
         }
 
-        idToken = (decoded as {id: number}).id;
+        const user = await userService.getUser((decoded as jwt.JwtPayload).id);
+        if(!user) throw error.notFound('user');
+
+        res.locals.id = user.id;
+
+        next()
         
     });
-    
-
-    next()
 }
