@@ -2,7 +2,7 @@ import * as credentialRepository from '../repositories/credentialRepository';
 
 import { encrypt, decrypt } from '../utilities/ecryptUtility';
 
-export function createCredential (dataCredential: credentialRepository.createCredential) {
+export async function createCredential (dataCredential: credentialRepository.createCredential) {
     const {
         url, 
         username, 
@@ -12,5 +12,6 @@ export function createCredential (dataCredential: credentialRepository.createCre
     } = dataCredential
 
     const passwordHash = encrypt(password);
-    console.log(passwordHash)
+   
+    await credentialRepository.createCredential({...dataCredential, password: passwordHash })
 }
