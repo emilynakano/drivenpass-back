@@ -41,6 +41,17 @@ model securityNotes {
   users     users    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
 
+model credentials {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  title     String
+  url       String
+  username  String
+  password  String
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  users     users    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
 model users {
   id            Int             @id @default(autoincrement())
   name          String
@@ -49,6 +60,7 @@ model users {
   cards         cards[]
   networks      networks[]
   securityNotes securityNotes[]
+  credentials   credentials[]
 }
 
 enum cardType {
