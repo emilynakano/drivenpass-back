@@ -1,4 +1,6 @@
-import * as credentialRepository from "../repositories/credentialRepository";
+import * as credentialRepository from '../repositories/credentialRepository';
+
+import { encrypt, decrypt } from '../utilities/ecryptUtility';
 
 export function createCredential (dataCredential: credentialRepository.createCredential) {
     const {
@@ -9,5 +11,4 @@ export function createCredential (dataCredential: credentialRepository.createCre
         userId
     } = dataCredential
 
-    
 }
