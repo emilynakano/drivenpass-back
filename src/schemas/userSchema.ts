@@ -6,5 +6,4 @@ export const userSignUpSchema = joi.object({
     checkPassword: joi.string()
         .valid( joi.ref('password'))
         .required()
-        .messages( { allowOnly: 'must match password'} )
 })
