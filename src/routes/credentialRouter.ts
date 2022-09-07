@@ -12,6 +12,11 @@ credentialRouter.post('/credentials',
     tokenMiddleware,
     schemaMiddleware(credentialSchema),
     credentialController.createCredential
-)
+);
+
+credentialRouter.get('/credentials', 
+    tokenMiddleware,
+    credentialController.getUserCredentials
+);
 
 export default credentialRouter;

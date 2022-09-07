@@ -12,6 +12,15 @@ export async function findByTitleAndUserId (title: string, userId: number) {
         }
     })
 }
+
+export async function findByUserId ( userId: number ) {
+    return await prisma.credentials.findMany({
+        where: {
+            userId
+        }
+    })
+}
+
 export async function createCredential(credentialData: createCredential) {
     await prisma.credentials.create({
         data: credentialData

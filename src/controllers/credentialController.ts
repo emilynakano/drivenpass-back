@@ -18,3 +18,11 @@ export async function createCredential (req: Request, res: Response) {
     
     res.status(201).send('credential reegistred sucessfully!')
 }
+
+export async function getUserCredentials (req: Request, res: Response) {
+    const userId = res.locals.id;
+    
+    const credentials = await credentialService.getUserCredentials(userId)
+    
+    res.status(201).send(credentials)
+}

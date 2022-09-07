@@ -14,3 +14,7 @@ export async function createCredential (dataCredential: credentialRepository.cre
    
     await credentialRepository.createCredential({...dataCredential, password: passwordHash })
 }
+
+export async function getUserCredentials (userId: number) {
+    
+}
