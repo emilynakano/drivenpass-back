@@ -23,4 +23,9 @@ export async function getUserCredentials (userId: number) {
     return credentials;
 }
 
+export async function getCredentialById (userId: number, credentialId: number) {
 
+    const credentials = await credentialRepository.findByCredentialId(credentialId);
+    
+    return credentials;
+}

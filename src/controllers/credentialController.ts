@@ -24,5 +24,14 @@ export async function getUserCredentials (req: Request, res: Response) {
     
     const credentials = await credentialService.getUserCredentials(userId)
     
-    res.status(201).send(credentials)
+    res.status(200).send(credentials)
+}
+
+export async function getCredentialById (req: Request, res: Response) {
+    const userId = res.locals.id;
+    const credentialId = req.params.id;
+
+    const credentials = await credentialService.getCredentialById(userId, Number(credentialId))
+    
+    res.status(200).send(credentials)
 }

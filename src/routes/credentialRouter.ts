@@ -19,4 +19,9 @@ credentialRouter.get('/credentials',
     credentialController.getUserCredentials
 );
 
+credentialRouter.get('/credentials/:id', 
+    tokenMiddleware,
+    credentialController.getCredentialById
+);
+
 export default credentialRouter;
