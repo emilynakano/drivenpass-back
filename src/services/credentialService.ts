@@ -22,3 +22,4 @@ export async function getUserCredentials (userId: number) {
     
     return credentials;
 }
+

@@ -4,6 +4,16 @@ import { credentials } from "@prisma/client";
 
 export type createCredential = Omit<credentials, "id" | "createdAt" >
 
+const selectedFields = {
+    id: true,
+    userId: false,
+    title: true,
+    url: true,
+    username: true,
+    password: true,
+    createdAt: false
+}
+
 export async function findByTitleAndUserId (title: string, userId: number) {
     return await prisma.credentials.findFirst({
         where: {
@@ -18,15 +28,7 @@ export async function findByUserId ( userId: number ) {
         where: {
             userId
         },
-        select: {
-            id: true,
-            userId: false,
-            title: true,
-            url: true,
-            username: true,
-            password: true,
-            createdAt: false
-        }
+        select: selectedFields
     })
 }
 
