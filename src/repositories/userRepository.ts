@@ -11,11 +11,21 @@ export async function insertUser (dataUser: ICreateUser) {
     });
 
 }
-export async function findUser (email: string) {
+export async function findByEmail (email: string) {
     
     return await prisma.users.findFirst({
         where: {
             email
+        }
+    });
+
+}
+
+export async function findById (id: number) {
+    
+    return await prisma.users.findFirst({
+        where: {
+            id
         }
     });
 
