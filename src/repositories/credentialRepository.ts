@@ -4,10 +4,11 @@ import { credentials } from "@prisma/client";
 
 export type createCredential = Omit<credentials, "id" | "createdAt" >
 
-export async function findByTitle (title: string) {
+export async function findByTitleAndUserId (title: string, userId: number) {
     return await prisma.credentials.findFirst({
         where: {
-            title
+            title,
+            userId
         }
     })
 }
