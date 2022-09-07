@@ -17,6 +17,15 @@ export async function findByUserId ( userId: number ) {
     return await prisma.credentials.findMany({
         where: {
             userId
+        },
+        select: {
+            id: true,
+            userId: false,
+            title: true,
+            url: true,
+            username: true,
+            password: true,
+            createdAt: false
         }
     })
 }

@@ -16,5 +16,9 @@ export async function createCredential (dataCredential: credentialRepository.cre
 }
 
 export async function getUserCredentials (userId: number) {
+    const credentials = await credentialRepository.findByUserId(userId);
+
+    credentials.forEach((credential) => credential.password = decrypt(credential.password))
     
+    return credentials;
 }
