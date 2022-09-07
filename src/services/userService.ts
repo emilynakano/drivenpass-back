@@ -6,4 +6,5 @@ export async function signUp ( dataUser : userRepository.IUser ) {
 
     const passwordHash = await bcrypt.hash(password, 10);
     
+    await userRepository.insertUser({...dataUser, password: passwordHash})
 }
