@@ -1,4 +1,9 @@
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 import * as userRepository from '../repositories/userRepository';
 
@@ -19,4 +24,9 @@ export async function signUp ( dataUser:userRepository.ICreateUser ) {
 export async function signIn( dataUser:userRepository.ILoginUser ) {
     const { email, password } = dataUser;
 
+    const secretKey:string = process.env.JWT_SECRET_KEY??'secretKey';
+
+    const token = jwt.sign({ test: 'test' }, secretKey, { expiresIn: '30d' });
+    
+    return token
 }

@@ -13,7 +13,7 @@ export async function signUp (req: Request, res: Response) {
 export async function signIn (req: Request, res: Response) {
     const { password, email } = req.body;
 
-    await userService.signIn({ password, email });
+    const token:string = await userService.signIn({ password, email });
 
-    res.status(201).send('user logged sucessfuly!')
+    res.status(201).send({token});
 }
