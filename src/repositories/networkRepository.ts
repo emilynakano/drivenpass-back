@@ -13,15 +13,6 @@ const selectedFields = {
     createdAt: false
 }
 
-export async function findByTitleAndUserId (title: string, userId: number) {
-    return await prisma.networks.findFirst({
-        where: {
-            title,
-            userId
-        }
-    })
-}
-
 export async function findByUserId ( userId: number ) {
     return await prisma.networks.findMany({
         where: {
