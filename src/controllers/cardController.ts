@@ -34,5 +34,5 @@ export async function deleteCard (req: Request, res: Response) {
 
     await cardService.deleteCard(userId, Number(cardId))
     
-    res.status(203).send('card deleted sucessfuly!')
+    res.status(200).send('card deleted sucessfuly!')
 }
