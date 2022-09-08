@@ -35,5 +35,10 @@ export async function getSecurityNoteById (req: Request, res: Response) {
 }
 
 export async function deleteSecurityNote (req: Request, res: Response) {
+    const userId = res.locals.id;
+    const securityNoteId = req.params.id;
+
+    await securityNoteService.deleteSecurityNote(userId, Number(securityNoteId));
     
+    res.status(200).send('security note deleted sucessfluly!')
 }
