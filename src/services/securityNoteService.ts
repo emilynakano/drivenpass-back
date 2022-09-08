@@ -2,8 +2,6 @@ import * as securityNoteRepository from '../repositories/securityNoteRepository'
 
 import * as error from '../middlewares/errorHandlingMiddleware'
 
-import { encrypt, decrypt } from '../utilities/ecryptUtility';
-
 export async function createSecurityNote (dataSecurityNote: securityNoteRepository.createSecurityNotes) {
     const {  title, userId } = dataSecurityNote
 
@@ -14,7 +12,9 @@ export async function createSecurityNote (dataSecurityNote: securityNoteReposito
 }
 
 export async function getUserSecurityNotes (userId: number) {
-    
+    const securityNotes = await securityNoteRepository.findByUserId(userId);
+
+    return securityNotes;
 }
 
 export async function getSecurityNoteById (userId: number, SecurityNoteId: number) {
