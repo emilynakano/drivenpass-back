@@ -30,3 +30,10 @@ export async function findByUserId ( userId: number ) {
     })
 }
 
+export async function findBySecurityNoteId ( securityNote: number ) {
+    return await prisma.securityNotes.findFirst({
+        where: {
+            id: securityNote
+        }
+    })
+}
