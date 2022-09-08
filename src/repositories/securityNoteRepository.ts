@@ -43,3 +43,11 @@ export async function createSecurityNote(securityNoteData: createSecurityNotes) 
         data: securityNoteData
     })
 }
+
+export async function deleteSecurityNote(securityNoteId: number, userId: number) {
+    await prisma.securityNotes.delete({
+        where: {
+            id: securityNoteId
+        }
+    })
+}

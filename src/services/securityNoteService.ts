@@ -5,7 +5,12 @@ import * as error from '../middlewares/errorHandlingMiddleware'
 import { encrypt, decrypt } from '../utilities/ecryptUtility';
 
 export async function createSecurityNote (dataSecurityNote: securityNoteRepository.createSecurityNotes) {
-    
+    const {  title, userId } = dataSecurityNote
+
+    const securityNote = await securityNoteRepository.findByTitleAndUserId(title, userId);
+    if(securityNote) throw error.conflit('title')
+   
+    await securityNoteRepository.createSecurityNote(dataSecurityNote)
 }
 
 export async function getUserSecurityNotes (userId: number) {
