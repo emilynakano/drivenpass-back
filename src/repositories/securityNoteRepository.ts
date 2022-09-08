@@ -37,3 +37,9 @@ export async function findBySecurityNoteId ( securityNote: number ) {
         }
     })
 }
+
+export async function createSecurityNote(securityNoteData: createSecurityNotes) {
+    await prisma.securityNotes.create({
+        data: securityNoteData
+    })
+}
