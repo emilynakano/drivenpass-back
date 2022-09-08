@@ -36,5 +36,10 @@ export async function getNetworkById (req: Request, res: Response) {
 }
 
 export async function deleteNetwork (req: Request, res: Response) {
-    
+    const userId = res.locals.id;
+    const networkId = req.params.id;
+
+    await networkService.deleteNetwork(userId, Number(networkId));
+
+    res.status(200).send('network deleted sucessfuly!')
 }
