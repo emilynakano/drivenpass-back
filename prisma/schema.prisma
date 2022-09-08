@@ -14,7 +14,7 @@ model cards {
   number         String
   holderName     String
   securityCode   String
-  expirationDate DateTime @db.Date
+  expirationDate String
   password       String
   isVirtual      Boolean
   type           cardType
