@@ -55,4 +55,6 @@ export async function deleteCredential( userId: number, credentialId:number ) {
     if(!credential) throw error.notFound('credential');
     
     if(credential.userId !== userId) throw error.badRequest("another user's credential");
+
+    
 }

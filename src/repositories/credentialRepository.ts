@@ -45,3 +45,11 @@ export async function createCredential(credentialData: createCredential) {
         data: credentialData
     })
 }
+
+export async function deleteCredential(credentialId: number, userId: number) {
+    await prisma.credentials.delete({
+        where: {
+            id: credentialId
+        }
+    })
+}
