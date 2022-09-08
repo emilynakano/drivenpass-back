@@ -5,12 +5,9 @@ import * as error from '../middlewares/errorHandlingMiddleware'
 import { encrypt, decrypt } from '../utilities/ecryptUtility';
 
 export async function createNetwork (dataNetwork: networkRepository.createNetwork) {
-    const { title, userId, password } = dataNetwork
+    const { password } = dataNetwork
 
     const passwordHash = encrypt(password);
-
-    const network = await networkRepository.findByTitleAndUserId(title, userId);
-    if(network) throw error.conflit('title');
    
     await networkRepository.createNetwork({...dataNetwork, password: passwordHash })
 }
