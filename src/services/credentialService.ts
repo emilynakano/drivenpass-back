@@ -56,5 +56,5 @@ export async function deleteCredential( userId: number, credentialId:number ) {
     
     if(credential.userId !== userId) throw error.badRequest("another user's credential");
 
-    
+    credentialRepository.deleteCredential(credentialId, userId);
 }
