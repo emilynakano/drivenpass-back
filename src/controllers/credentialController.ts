@@ -35,3 +35,12 @@ export async function getCredentialById (req: Request, res: Response) {
     
     res.status(200).send(credentials)
 }
+
+export async function deleteCredential (req: Request, res: Response) {
+    const userId = res.locals.id;
+    const credentialId = req.params.id;
+
+    await credentialService.deleteCredential(userId, Number(credentialId))
+    
+    res.status(203).send('credential deleted sucessfuly!')
+}

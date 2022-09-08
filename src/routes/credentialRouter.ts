@@ -24,4 +24,9 @@ credentialRouter.get('/credentials/:id',
     credentialController.getCredentialById
 );
 
+credentialRouter.delete('/credentials/:id', 
+    tokenMiddleware,
+    credentialController.deleteCredential
+);
+
 export default credentialRouter;
