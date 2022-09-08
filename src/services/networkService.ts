@@ -10,7 +10,7 @@ export async function createNetwork (dataNetwork: networkRepository.createNetwor
     const passwordHash = encrypt(password);
 
     const network = await networkRepository.findByTitleAndUserId(title, userId);
-    if(network) throw error.conflit('title')
+    if(network) throw error.conflit('title');
    
     await networkRepository.createNetwork({...dataNetwork, password: passwordHash })
 }
