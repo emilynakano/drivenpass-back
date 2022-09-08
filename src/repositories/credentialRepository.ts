@@ -33,7 +33,7 @@ export async function findByUserId ( userId: number ) {
 }
 
 export async function findByCredentialId ( credentialId: number ) {
-    return await prisma.credentials.findMany({
+    return await prisma.credentials.findFirst({
         where: {
             id: credentialId
         },

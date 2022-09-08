@@ -24,8 +24,12 @@ export async function getUserCredentials (userId: number) {
 }
 
 export async function getCredentialById (userId: number, credentialId: number) {
-
-    const credentials = await credentialRepository.findByCredentialId(credentialId);
+    const credential = await credentialRepository.findByCredentialId(credentialId);
     
-    return credentials;
+    if(!credential) throw error.notFound('credential');
+    if(credential.userId !== userId) throw error.badRequest("another user's credential");
+    
+    credential.password = decrypt(credential.password);
+    
+    return credential;
 }
