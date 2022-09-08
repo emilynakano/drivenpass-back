@@ -37,9 +37,10 @@ export async function getCardById (userId: number, cardId: number) {
     if(card.userId !== userId) throw error.badRequest("another user's card");
     
     const dataCard = {
-        number: card.id,
+        id: card.id,
         title: card.title,
         holderName: card.holderName,
+        number: card.number,
         securityCode: decrypt(card.securityCode),
         expirationDate: card.expirationDate,
         password: decrypt(card.password),
