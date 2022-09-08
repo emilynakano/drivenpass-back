@@ -4,7 +4,7 @@ import * as error from '../middlewares/errorHandlingMiddleware'
 
 import { encrypt, decrypt } from '../utilities/ecryptUtility';
 
-export async function createnetwork (dataNetwork: networkRepository.createNetwork) {
+export async function createNetwork (dataNetwork: networkRepository.createNetwork) {
     const { title, userId, password } = dataNetwork
 
     const passwordHash = encrypt(password);
@@ -15,7 +15,7 @@ export async function createnetwork (dataNetwork: networkRepository.createNetwor
     await networkRepository.createNetwork({...dataNetwork, password: passwordHash })
 }
 
-export async function getUsernetworks (userId: number) {
+export async function getUserNetworks (userId: number) {
     const networks = await networkRepository.findByUserId(userId);
 
     networks.forEach((network) => network.password = decrypt(network.password))
@@ -23,7 +23,7 @@ export async function getUsernetworks (userId: number) {
     return networks;
 }
 
-export async function getnetworkById (userId: number, networkId: number) {
+export async function getNetworkById (userId: number, networkId: number) {
     const network = await networkRepository.findByNetworkId(networkId);
    
     if(!network) throw error.notFound('network');
@@ -39,7 +39,7 @@ export async function getnetworkById (userId: number, networkId: number) {
     return datanetwork;
 }
 
-export async function deletenetwork( userId: number, networkId:number ) {
+export async function deleteNetwork( userId: number, networkId:number ) {
     const network = await networkRepository.findByNetworkId(networkId);
     if(!network) throw error.notFound('network');
     

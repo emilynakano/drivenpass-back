@@ -24,6 +24,6 @@ export default function errorHandlingMiddleware (error: any, req: Request, res: 
     if(error.type === 'error_unauthorized') return res.status(401).send(error.message);
 
     if(error.type === 'error_conflict') return res.status(409).send(error.message);
-    
+    console.log(error)
     return res.status(500).send(error);
 }
