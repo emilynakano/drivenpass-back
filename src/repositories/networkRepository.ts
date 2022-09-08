@@ -8,7 +8,7 @@ const selectedFields = {
     id: true,
     userId: false,
     title: true,
-    netwoekName: true,
+    networkName: true,
     password: true,
     createdAt: false
 }
