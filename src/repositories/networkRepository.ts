@@ -2,7 +2,7 @@ import prisma from "../databases/database";
 
 import { networks } from "@prisma/client";
 
-type createNetwork = Omit<networks, "id" | "createdAt">
+export type createNetwork = Omit<networks, "id" | "createdAt">
 
 const selectedFields = {
     id: true,
