@@ -36,8 +36,7 @@ export async function findByCredentialId ( credentialId: number ) {
     return await prisma.credentials.findFirst({
         where: {
             id: credentialId
-        },
-        select: selectedFields
+        }
     })
 }
 

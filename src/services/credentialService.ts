@@ -31,5 +31,21 @@ export async function getCredentialById (userId: number, credentialId: number) {
     
     credential.password = decrypt(credential.password);
     
-    return credential;
+    const {
+        id,
+        title,
+        url,
+        username,
+        password,
+    } = credential
+
+    const dataCredential = {
+        id,
+        title,
+        url,
+        username,
+        password,
+    };
+    
+    return dataCredential;
 }
