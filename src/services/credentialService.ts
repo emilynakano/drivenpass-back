@@ -51,5 +51,8 @@ export async function getCredentialById (userId: number, credentialId: number) {
 }
 
 export async function deleteCredential( userId: number, credentialId:number ) {
+    const credential = await credentialRepository.findByCredentialId(credentialId);
+    if(!credential) throw error.notFound('credential');
     
+    if(credential.userId !== userId) throw error.badRequest("another user's credential");
 }
