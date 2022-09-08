@@ -30,7 +30,7 @@ export async function getCredentialById (userId: number, credentialId: number) {
     if(credential.userId !== userId) throw error.badRequest("another user's credential");
     
     const dataCredential = {
-        credential: credential.id,
+        id: credential.id,
         title: credential.title,
         url: credential.url,
         username: credential.username,
