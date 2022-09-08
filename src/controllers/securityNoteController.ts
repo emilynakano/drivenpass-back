@@ -26,7 +26,12 @@ export async function getUserSecurityNotes (req: Request, res: Response) {
 }
 
 export async function getSecurityNoteById (req: Request, res: Response) {
-    
+    const userId = res.locals.id;
+    const securityNoteId = req.params.id;
+
+    const securityNote = await securityNoteService.getSecurityNoteById(userId, Number(securityNoteId))
+
+    res.status(200).send(securityNote)
 }
 
 export async function deleteSecurityNote (req: Request, res: Response) {
