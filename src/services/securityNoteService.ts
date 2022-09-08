@@ -37,4 +37,6 @@ export async function deleteSecurityNote( userId: number, SecurityNoteId:number 
     
     if(!securityNote) throw error.notFound('security note');
     if(securityNote.userId !== userId) throw error.badRequest("another securtyNote's owner");
+
+    await securityNoteRepository.deleteSecurityNote(SecurityNoteId, userId)
 }
