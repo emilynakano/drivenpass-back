@@ -27,7 +27,12 @@ export async function getUserNetworks (req: Request, res: Response) {
 }
 
 export async function getNetworkById (req: Request, res: Response) {
-    
+    const userId = res.locals.id;
+    const networkId = req.params.id;
+
+    const network = await networkService.getNetworkById(userId, Number(networkId));
+
+    res.status(200).send(network)
 }
 
 export async function deleteNetwork (req: Request, res: Response) {
