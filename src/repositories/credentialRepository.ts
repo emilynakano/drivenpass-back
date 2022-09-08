@@ -37,7 +37,7 @@ export async function findByCredentialId ( credentialId: number ) {
         where: {
             id: credentialId
         },
-        select: {...selectedFields, userId: true}
+        select: selectedFields
     })
 }
 

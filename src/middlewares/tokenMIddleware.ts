@@ -16,19 +16,21 @@ export default async function tokenMiddleware ( req: Request, res: Response, nex
         throw error.unauthorized('token')
     }
 
+    try {
 
-    jwt.verify(token, process.env.JWT_SECRET_KEY??'secretKey', async function(err, decoded){
-
-        if(err)  {
-            throw error.unauthorized("token")
-        }
-
+        let decoded = jwt.verify(token, process.env.JWT_SECRET_KEY??'secretKey');
+        
         const user = await userService.getUser((decoded as jwt.JwtPayload).id);
         if(!user) throw error.notFound('user');
 
         res.locals.id = user.id;
 
         next()
+
+    } catch(err) {
+
+        throw error.unauthorized("token");
         
-    });
+    }
+
 }
