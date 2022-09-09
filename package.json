@@ -1,8 +1,11 @@
 {
   "name": "projeto19-drivenpass",
   "version": "1.0.0",
+  "engines": {
+    "node": "18.x"
+  },
   "description": "<div align=\"center\">  \t<h1> DrivenPass </h1> <div />",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "build": "npx tsc",
     "start": "node ./dist/server.js",
