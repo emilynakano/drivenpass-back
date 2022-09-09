@@ -2,7 +2,7 @@
   "name": "projeto19-drivenpass",
   "version": "1.0.0",
   "engines": {
-    "node": "18.x"
+    "node": "16.x"
   },
   "description": "<div align=\"center\">  \t<h1> DrivenPass </h1> <div />",
   "main": "./src/server.js",
