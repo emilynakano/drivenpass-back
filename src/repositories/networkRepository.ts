@@ -4,7 +4,6 @@ import { networks } from "@prisma/client";
 
 export type createNetwork = Omit<networks, "id" | "createdAt">
 
-//const heroku = "heroku"
 const selectedFields = {
     id: true,
     userId: false,
