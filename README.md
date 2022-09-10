@@ -85,7 +85,7 @@ The server will respond with an object in this format:
    
    ### Get User Credentials
    
-  POST /credentials
+  GET /credentials
   
   Send a Authorization Header with format Bearer Token.
   
@@ -152,7 +152,7 @@ The server will respond with an object in this format:
    
    ### Get User Networks
    
-  POST /networks
+  GET /networks
   
   Send a Authorization Header with format Bearer Token.
   
@@ -191,6 +191,85 @@ The server will respond with an object in this format:
   "networkName": "5g-Net" , 
   "password": "neighborPassword"
 }
+```
+<div />
+	
+<div align="start"> 
+
+  ### Card Creation</h2>
+  
+  POST /cards
+  
+  Send a Authorization Header with format Bearer Token, and  a Request Body in this format, with the type field valid for "debit", "credit" and "both":
+  
+
+```
+{
+  "number": "1234567892345678",
+  "title": "card to buy snacks",
+  "holderName": "Fulano S Oliveira",
+  "securityCode": "123",
+  "expirationDate": "04/21",
+  "password": "passwordCard",
+  "isVirtual": true,
+  "type": "debit"
+}
+```
+<div />
+
+<div align="start"> 
+   
+   ### Get User Cards
+   
+  GET /cards
+  
+  Send a Authorization Header with format Bearer Token.
+  
+  The server will respond with an array in this format:
+  
+
+```
+[
+ {
+  "id": 1,
+  "number": "1234567892345678",
+  "title": "card to buy snacks",
+  "holderName": "Fulano S Oliveira",
+  "securityCode": "123",
+  "expirationDate": "04/21",
+  "password": "passwordCard",
+  "isVirtual": true,
+  "type": "debit"
+ }
+] 
+```
+<div />
+
+<div align="start"> 
+  
+  ### Get Card By Id
+ 
+  GET /cards/:id
+  
+  Send a Authorization Header with format Bearer Token.
+  
+  Replace ":id" to desired id
+  
+  The server will respond with an object in this format: 
+  
+
+```
+ {
+  "id": 1,
+  "number": "1234567892345678",
+  "title": "card to buy snacks",
+  "holderName": "Fulano S Oliveira",
+  "securityCode": "123",
+  "expirationDate": "04/21",
+  "password": "passwordCard",
+  "isVirtual": true,
+  "type": "debit"
+ }
 ```
 <div />
 
