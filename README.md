@@ -15,8 +15,23 @@ A password manager API.
 
 <br>
 
-# Documentation
+## Working Flow
 
+<div align="start"> 
+
+1. User creates a login (name, email, password).
+
+2. User logs in and receives a token.
+
+3. User creates a register using one of the categories (credentials/networks/cards/notes).
+
+4. User can access the register according to the category, either searching all or one in specific.
+
+</div>
+
+<br>
+
+## Documentation
 
 <div align="start"> 
 
