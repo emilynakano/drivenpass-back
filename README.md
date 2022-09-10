@@ -320,3 +320,78 @@ The server will respond with an object in this format:
 
 <br />
 
+<div align="start"> 
+
+  ### Note Creation</h2>
+  
+  POST /notes
+  
+  Send a Authorization Header with format Bearer Token, and  a Request Body in this format:
+  
+
+```
+{
+  "title": "secret tought",
+  "note": "I want to break the diet and eat a lot of ice cream" , 
+}
+```
+<div />
+
+<div align="start"> 
+   
+   ### Get User Notes
+   
+  GET /notes
+  
+  Send a Authorization Header with format Bearer Token.
+  
+  The server will respond with an array in this format:
+  
+
+```
+[
+ {
+  "id": 1,
+  "title": "secret tought",
+  "note": "I want to break the diet and eat a lot of ice cream" , 
+ }
+] 
+```
+<div />
+
+<div align="start"> 
+  
+  ### Get Note By Id
+ 
+  GET /notes/:id
+  
+  Send a Authorization Header with format Bearer Token.
+  
+  Replace ":id" to desired id
+  
+  The server will respond with an object in this format: 
+  
+
+```
+{
+  "id": 1,
+  "title": "secret tought",
+  "note": "I want to break the diet and eat a lot of ice cream" , 
+}
+```
+<div />
+
+<div align="start"> 
+  
+  ### Delete Note
+ 
+  DELETE /notes/:id
+  
+  Send a Authorization Header with format Bearer Token.
+  
+  Replace ":id" to desired id
+  
+  The server will respond with status 200 if the request is successful.
+
+<div />
+
