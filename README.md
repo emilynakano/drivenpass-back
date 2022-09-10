@@ -129,6 +129,21 @@ The server will respond with an object in this format:
 ```
 <div />
 	
+<div align="start"> 
+  
+  ### Delete Credential
+ 
+  DELETE /credentials/:id
+  
+  Send a Authorization Header with format Bearer Token.
+  
+  Replace ":id" to desired id
+  
+  The server will respond with status 200 if the request is successful.
+
+<div />
+
+<br />
 	
 <div align="start"> 
 
@@ -193,6 +208,22 @@ The server will respond with an object in this format:
 }
 ```
 <div />
+
+<div align="start"> 
+  
+  ### Delete Network
+ 
+  DELETE /networks/:id
+  
+  Send a Authorization Header with format Bearer Token.
+  
+  Replace ":id" to desired id
+  
+  The server will respond with status 200 if the request is successful.
+
+<div />
+
+<br />
 	
 <div align="start"> 
 
@@ -272,4 +303,20 @@ The server will respond with an object in this format:
  }
 ```
 <div />
+	
+<div align="start"> 
+  
+  ### Delete Card
+ 
+  DELETE /cards/:id
+  
+  Send a Authorization Header with format Bearer Token.
+  
+  Replace ":id" to desired id
+  
+  The server will respond with status 200 if the request is successful.
+
+<div />
+
+<br />
 
