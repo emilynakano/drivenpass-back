@@ -8,23 +8,23 @@ import tokenMiddleware from '../middlewares/tokenMIddleware';
 
 const credentialRouter = Router();
 
-credentialRouter.post('/credentials', 
+credentialRouter.post('/', 
     tokenMiddleware,
     schemaMiddleware(credentialSchema),
     credentialController.createCredential
 );
 
-credentialRouter.get('/credentials', 
+credentialRouter.get('/', 
     tokenMiddleware,
     credentialController.getUserCredentials
 );
 
-credentialRouter.get('/credentials/:id', 
+credentialRouter.get('/:id', 
     tokenMiddleware,
     credentialController.getCredentialById
 );
 
-credentialRouter.delete('/credentials/:id', 
+credentialRouter.delete('/:id', 
     tokenMiddleware,
     credentialController.deleteCredential
 );

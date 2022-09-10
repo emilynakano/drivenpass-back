@@ -8,23 +8,23 @@ import securityNoteSchema from '../schemas/securityNoteSchema';
 
 const securityNoteRouter = Router();
 
-securityNoteRouter.post('/notes', 
+securityNoteRouter.post('/', 
     tokenMiddleware,
     schemaMiddleware(securityNoteSchema),
     securityNoteController.createSecurityNote
 );
 
-securityNoteRouter.get('/notes', 
+securityNoteRouter.get('/', 
     tokenMiddleware,
     securityNoteController.getUserSecurityNotes
 );
 
-securityNoteRouter.get('/notes/:id', 
+securityNoteRouter.get('/:id', 
     tokenMiddleware,
     securityNoteController.getSecurityNoteById
 );
 
-securityNoteRouter.delete('/notes/:id', 
+securityNoteRouter.delete('/:id', 
     tokenMiddleware,
     securityNoteController.deleteSecurityNote
 );

@@ -9,9 +9,9 @@ import cardRouter from './cardRouter';
 const router = Router();
 
 router.use(userRouter);
-router.use(credentialRouter);
-router.use(securityNoteRouter);
-router.use(networkRouter);
-router.use(cardRouter);
+router.use("/credentials", credentialRouter);
+router.use("/notes", securityNoteRouter);
+router.use("/networks", networkRouter);
+router.use("/cards", cardRouter);
 
 export default router;

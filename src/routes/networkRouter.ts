@@ -8,23 +8,23 @@ import networkSchema from '../schemas/networkSchema'
 
 const networkRouter = Router();
 
-networkRouter.post('/networks', 
+networkRouter.post('/', 
     schemaMiddleware(networkSchema),
     tokenMiddleware,
     networkController.createNetwork
 );
 
-networkRouter.get('/networks', 
+networkRouter.get('/', 
     tokenMiddleware,
     networkController.getUserNetworks
 );
 
-networkRouter.get('/networks/:id', 
+networkRouter.get('/:id', 
     tokenMiddleware,
     networkController.getNetworkById
 );
 
-networkRouter.delete('/networks/:id', 
+networkRouter.delete('/:id', 
     tokenMiddleware,
     networkController.deleteNetwork
 );

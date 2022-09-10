@@ -8,23 +8,23 @@ import cardSchema from '../schemas/cardSchema'
 
 const cardRouter = Router();
 
-cardRouter.post('/cards', 
+cardRouter.post('/', 
     tokenMiddleware,
     schemaMiddleware(cardSchema),
     cardController.createCard
 );
 
-cardRouter.get('/cards', 
+cardRouter.get('/', 
     tokenMiddleware,
     cardController.getUserCards
 );
 
-cardRouter.get('/cards/:id', 
+cardRouter.get('/:id', 
     tokenMiddleware,
     cardController.getCardById
 );
 
-cardRouter.delete('/cards/:id', 
+cardRouter.delete('/:id', 
     tokenMiddleware,
     cardController.deleteCard
 );
