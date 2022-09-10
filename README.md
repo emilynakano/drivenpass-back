@@ -15,19 +15,21 @@ A password manager API.
 
 <br>
 
+# Documentation
 
-<div align="center"> 
-	<h1> Documentation </h1>
-<div />
+
 <div align="start"> 
-	<h2> User Registration</h2>
-  <h3> <span style="color:green">POST </span> /sign-up</h3>
-  <h3> Send a request body in this format:</h3>
+
+  ### User Registration
+  
+  POST /sign-up
+  
+  Send a request body in this format:
   
 
 ```
 {
-	name: Fulano,
+    name: Fulano,
     email: fulano@gmail.com,
     password: 1234567890,
     checkPassword: 1234567890
@@ -36,9 +38,12 @@ A password manager API.
 <div />
 
 <div align="start"> 
-	<h2> User Login</h2>
-  <h3> <span style="color:green">POST </span> /sign-in</h3>
-  <h3> Send a request body in this format:</h3>
+
+  ### User Login
+  
+  POST /sign-in
+  
+  Send a request body in this format
   
 
 ```
@@ -48,7 +53,7 @@ A password manager API.
 }
 ```
 
-<h3> The server will respond with an object in this format:</h3>
+The server will respond with an object in this format:
 
 ```
 {
@@ -58,9 +63,12 @@ A password manager API.
 <div />
 
 <div align="start"> 
-	<h2> Credential Creation</h2>
-  <h3> <span style="color:green">POST </span> /credentials</h3>
-  <h3> Send a Authorization Header with format Bearer Token, and  a Request Body in this format:</h3>
+
+  ### Credential Creation</h2>
+  
+  POST /credentials
+  
+  Send a Authorization Header with format Bearer Token, and  a Request Body in this format:
   
 
 ```
@@ -74,10 +82,14 @@ A password manager API.
 <div />
 
 <div align="start"> 
-	<h2> Get User Credentials</h2>
-  <h3> <span style="color:green">GET </span> /credentials</h3>
-  <h3> Send a Authorization Header with format Bearer Token.</h3>
-  <h3> The server will respond with an array in this format: </h3>
+   
+   ### Get User Credentials
+   
+  POST /credentials
+  
+  Send a Authorization Header with format Bearer Token.
+  
+  The server will respond with an array in this format:
   
 
 ```
@@ -94,11 +106,16 @@ A password manager API.
 <div />
 
 <div align="start"> 
-	<h2> Get Credential By Id</h2>
-  <h3> <span style="color:green">GET </span> /credentials/:id</h3>
-  <h3> Send a Authorization Header with format Bearer Token.</h3>
-  <h3> Replace ":id" to desired id</h3>
-  <h3> The server will respond with an object in this format: </h3>
+  
+  ### Get Credential By Id
+ 
+  GET </span> /credentials/:id
+  
+  Send a Authorization Header with format Bearer Token.
+  
+  Replace ":id" to desired id
+  
+  The server will respond with an object in this format: 
   
 
 ```
