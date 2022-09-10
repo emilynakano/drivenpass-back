@@ -13,6 +13,42 @@ A password manager API.
   </a>
 </p>
 
+<br>	
+
+## Running this project
+	
+<div align="start"> 
+
+	
+```
+	
+# First, clone this repository
+$ git clone https://github.com/emilynakano/drivenpass-back.git
+
+# Acces this repository
+$ cd drivenpass-back
+
+# Go to the '.env.example' in your code editor
+# Put your DATABASE_URL, which should be a url of an empty database made with postgres.
+# Put your PORT, which should be a port of the aplication.
+# Put your JWT_SECRET_KEY, which is a key that should be a string.
+# Put your CRYPT_SECRET_KEY, which is a key that should be a string.
+# Finally, make a copy of '.env.example' to '.env'
+$ cp .env.example .env
+
+# Install dependencies
+$ npm i -y
+
+# Build
+$ npm run build
+	
+# Run the project in the developer mode
+$ npm run start	
+	
+```
+	
+<div />
+	
 <br>
 
 ## Working Flow
