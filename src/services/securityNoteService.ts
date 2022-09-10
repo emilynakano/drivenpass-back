@@ -21,7 +21,7 @@ export async function getSecurityNoteById (userId: number, SecurityNoteId: numbe
     const securityNote = await securityNoteRepository.findBySecurityNoteId(SecurityNoteId);
     
     if(!securityNote) throw error.notFound('security note');
-    if(securityNote.userId !== userId) throw error.badRequest("another securtyNote's owner");
+    if(securityNote.userId !== userId) throw error.badRequest("another owner's note!");
 
     const dataSecurityNote = {
         id: securityNote.id,
@@ -36,7 +36,7 @@ export async function deleteSecurityNote( userId: number, SecurityNoteId:number 
     const securityNote = await securityNoteRepository.findBySecurityNoteId(SecurityNoteId);
     
     if(!securityNote) throw error.notFound('security note');
-    if(securityNote.userId !== userId) throw error.badRequest("another securtyNote's owner");
+    if(securityNote.userId !== userId) throw error.badRequest("another owner's note!");
 
     await securityNoteRepository.deleteSecurityNote(SecurityNoteId, userId)
 }

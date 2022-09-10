@@ -34,7 +34,7 @@ export async function getCardById (userId: number, cardId: number) {
     const card = await cardRepository.findByCardId(cardId);
    
     if(!card) throw error.notFound('card');
-    if(card.userId !== userId) throw error.badRequest("another user's card");
+    if(card.userId !== userId) throw error.badRequest("another owner's card!");
     
     const dataCard = {
         id: card.id,
@@ -55,7 +55,7 @@ export async function deleteCard( userId: number, cardId:number ) {
     const card = await cardRepository.findByCardId(cardId);
     if(!card) throw error.notFound('card');
     
-    if(card.userId !== userId) throw error.badRequest("another user's card");
+    if(card.userId !== userId) throw error.badRequest("another owner's card!");
 
     cardRepository.deleteCard(cardId, userId);
 }

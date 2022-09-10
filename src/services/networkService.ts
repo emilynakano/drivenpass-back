@@ -24,7 +24,7 @@ export async function getNetworkById (userId: number, networkId: number) {
     const network = await networkRepository.findByNetworkId(networkId);
    
     if(!network) throw error.notFound('network');
-    if(network.userId !== userId) throw error.badRequest("another user's network");
+    if(network.userId !== userId) throw error.badRequest("another owner's network!");
     
     const datanetwork = {
         id: network.id,
@@ -40,7 +40,7 @@ export async function deleteNetwork( userId: number, networkId:number ) {
     const network = await networkRepository.findByNetworkId(networkId);
     if(!network) throw error.notFound('network');
     
-    if(network.userId !== userId) throw error.badRequest("another user's network");
+    if(network.userId !== userId) throw error.badRequest("another owner's network!");
 
     networkRepository.deleteNetwork(networkId, userId);
 }
