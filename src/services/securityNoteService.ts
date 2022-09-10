@@ -26,7 +26,7 @@ export async function getSecurityNoteById (userId: number, SecurityNoteId: numbe
     const dataSecurityNote = {
         id: securityNote.id,
         title: securityNote.title,
-        note: securityNote.title
+        note: securityNote.note
     };
 
     return dataSecurityNote
