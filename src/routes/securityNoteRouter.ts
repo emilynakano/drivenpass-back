@@ -1,31 +1,29 @@
 import { Router } from 'express';
 
 import * as securityNoteController from '../controllers/securityNoteController';
+import paramMiddleware from '../middlewares/paramMiddleware';
 
-import tokenMiddleware from '../middlewares/tokenMIddleware';
 import schemaMiddleware from '../middlewares/schemaMiddleware';
 import securityNoteSchema from '../schemas/securityNoteSchema';
 
 const securityNoteRouter = Router();
 
 securityNoteRouter.post('/', 
-    tokenMiddleware,
     schemaMiddleware(securityNoteSchema),
     securityNoteController.createSecurityNote
 );
 
 securityNoteRouter.get('/', 
-    tokenMiddleware,
     securityNoteController.getUserSecurityNotes
 );
 
 securityNoteRouter.get('/:id', 
-    tokenMiddleware,
+    paramMiddleware,
     securityNoteController.getSecurityNoteById
 );
 
 securityNoteRouter.delete('/:id', 
-    tokenMiddleware,
+    paramMiddleware,
     securityNoteController.deleteSecurityNote
 );
 

@@ -20,4 +20,4 @@ server.use(errorHandlingMiddleware);
 
 const PORT:number = Number(process.env.PORT);
 
-server.listen(PORT)
+server.listen(PORT, () => console.log(`server running on the port ${PORT}`))
