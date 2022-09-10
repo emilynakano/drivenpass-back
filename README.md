@@ -128,3 +128,69 @@ The server will respond with an object in this format:
 }
 ```
 <div />
+	
+	
+<div align="start"> 
+
+  ### Network Creation</h2>
+  
+  POST /networks
+  
+  Send a Authorization Header with format Bearer Token, and  a Request Body in this format:
+  
+
+```
+{
+  "title": "neighbor's wifi"
+  "networkName": "5g-Net" , 
+  "password": "neighborPassword"
+}
+```
+<div />
+
+<div align="start"> 
+   
+   ### Get User Networks
+   
+  POST /networks
+  
+  Send a Authorization Header with format Bearer Token.
+  
+  The server will respond with an array in this format:
+  
+
+```
+[
+ {
+   "id": 1,
+   "title": "neighbor's wifi"
+   "networkName": "5g-Net" , 
+   "password": "neighborPassword"
+ }
+] 
+```
+<div />
+
+<div align="start"> 
+  
+  ### Get Network By Id
+ 
+  GET </span> /networks/:id
+  
+  Send a Authorization Header with format Bearer Token.
+  
+  Replace ":id" to desired id
+  
+  The server will respond with an object in this format: 
+  
+
+```
+{
+  "id": 1,
+  "title": "neighbor's wifi"
+  "networkName": "5g-Net" , 
+  "password": "neighborPassword"
+}
+```
+<div />
+
