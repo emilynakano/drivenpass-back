@@ -15,34 +15,40 @@ A password manager API.
 
 <br>	
 
-## Running this project
 	
 <div align="start"> 
 
+## Running this project
+	
+Before starting, you will need to have the following tools installed on your machine: Postgres, Node.js.
+
+Besides, it's good to have an editor to work with the code like VSCode.
 	
 ```
 	
-# First, clone this repository
+# First, clone this repository.
 $ git clone https://github.com/emilynakano/drivenpass-back.git
 
-# Acces this repository
+# Acces this repository.
 $ cd drivenpass-back
 
-# Go to the '.env.example' in your code editor
-# Put your DATABASE_URL, which should be a url of an empty database made with postgres.
-# Put your PORT, which should be a port of the aplication.
-# Put your JWT_SECRET_KEY, which is a key that should be a string.
-# Put your CRYPT_SECRET_KEY, which is a key that should be a string.
-# Finally, make a copy of '.env.example' to '.env'
+# Go to the '.env.example' in your code editor.
+	
+# Put your DATABASE_URL, which must be a url of an empty database made with postgres.
+# Put your PORT, which must be a port of the aplication.
+# Put your JWT_SECRET_KEY, which is a key that must be a string.
+# Put your CRYPT_SECRET_KEY, which is a key that must be a string.
+	
+# Finally, make a copy of '.env.example' to '.env'.
 $ cp .env.example .env
 
-# Install dependencies
+# Install dependencies.
 $ npm i -y
 
-# Build
+# Build.
 $ npm run build
 	
-# Run the project in the developer mode
+# Run the project in the developer mode.
 $ npm run start	
 	
 ```
