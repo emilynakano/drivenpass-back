@@ -49,9 +49,11 @@ $ npm i -y
 $ npm run build
 	
 # Run the project in the developer mode.
-$ npm run start	
+$ npm run dev	
 	
 ```
+
+**NOTE:** There is a Thunder Client collection in this project's folder, it contains all the project routes with an example request body and a token already placed in the requests. To use it you will need to import it into your Thunder Client and put the url you are using.
 	
 <div />
 	
