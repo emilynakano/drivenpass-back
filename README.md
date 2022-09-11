@@ -73,6 +73,13 @@ $ npm run dev
 
 </div>
 
+
+<br>
+
+<div align="center" >
+  <img src="./github/example.gif" alt="demo-web" height="425">
+</div>
+
 <br>
 
 ## Documentation
