@@ -18,7 +18,7 @@ A password manager API.
 	
 <div align="start"> 
 
-## Running this project
+## 🏁 Running this project
 	
 Before starting, you will need to have the following tools installed on your machine: Postgres, Node.js.
 
@@ -59,7 +59,7 @@ $ npm run dev
 	
 <br>
 
-## Working Flow
+## 🧑🏻‍🏭 Working Flow
 
 <div align="start"> 
 
@@ -82,7 +82,7 @@ $ npm run dev
 
 <br>
 
-## Documentation
+## 🚀 Routes
 
 <div align="start"> 
 
