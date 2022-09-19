@@ -17,43 +17,6 @@ A password manager API.
 
 	
 <div align="start"> 
-
-## 🏁 Running this project
-	
-Before starting, you will need to have the following tools installed on your machine: Postgres, Node.js.
-
-Besides, it's good to have an editor to work with the code like VSCode.
-	
-```
-	
-# First, clone this repository.
-$ git clone https://github.com/emilynakano/drivenpass-back.git
-
-# Acces this repository.
-$ cd drivenpass-back
-
-# Go to the '.env.example' in your code editor.
-	
-# Put your DATABASE_URL, which must be a url of an empty database made with postgres.
-# Put your PORT, which must be a port of the aplication.
-# Put your JWT_SECRET_KEY, which is a key that must be a string.
-# Put your CRYPT_SECRET_KEY, which is a key that must be a string.
-	
-# Finally, make a copy of '.env.example' to '.env'.
-$ cp .env.example .env
-
-# Install dependencies.
-$ npm i -y
-
-# Build.
-$ npm run build
-	
-# Run the project in the developer mode.
-$ npm run dev	
-	
-```
-
-**NOTE:** There is a Thunder Client collection in this project's folder, it contains all the project routes with an example request body. To use it you will need to import it into your Thunder Client and put the url you are using.
 	
 <div />
 	
@@ -460,4 +423,41 @@ The server will respond with an object in this format:
   The server will respond with status 200 if the request is successful.
 
 <div />
+
+## 🏁 Running this project
+	
+Before starting, you will need to have the following tools installed on your machine: Postgres, Node.js.
+
+Besides, it's good to have an editor to work with the code like VSCode.
+	
+```
+	
+# First, clone this repository.
+$ git clone https://github.com/emilynakano/drivenpass-back.git
+
+# Acces this repository.
+$ cd drivenpass-back
+
+# Go to the '.env.example' in your code editor.
+	
+# Put your DATABASE_URL, which must be a url that follows the example: 'postgres://youruser:yourpassword@localhost:5432/yourdatabase'
+# Put your PORT, which must be a port of the aplication.
+# Put your JWT_SECRET_KEY, which is a key that must be a string.
+# Put your CRYPT_SECRET_KEY, which is a key that must be a string.
+	
+# Finally, make a copy of '.env.example' to '.env'.
+$ cp .env.example .env
+
+# Install dependencies.
+$ npm i -y
+
+# create database with prisma.
+$ npm run build
+	
+# Run the project in the developer mode.
+$ npx prisma migrate dev
+	
+```
+
+**NOTE:** There is a Thunder Client collection in this project's folder, it contains all the project routes with an example request body. To use it you will need to import it into your Thunder Client and put the url you are using.
 
